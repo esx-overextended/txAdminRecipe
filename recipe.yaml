@@ -107,7 +107,11 @@ tasks:
     - action: unzip
         src: ./tmp/illenium-appearance.zip
         dest: ./resources/[core]
-    # TODO: Provice skinchanger and esx_skin in illenium-appearance's fxmanifest.lua
+    - action: write_file
+          file: ./resources/[core]/illenium-appearance/fxmanifest.lua
+          append: true
+          data: |
+            provides { "esx_skin", "skinchanger" }
 
     - action: download_github
         src: https://github.com/esx-overextended/esx_loadingscreen

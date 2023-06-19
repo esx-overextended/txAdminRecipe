@@ -86,7 +86,7 @@ tasks:
     ref: main
     dest: ./resources/[core]/es_extended
   - action: query_database
-    file: ./resources/[core]/es_extended/esx-overextened.sql
+    file: ./resources/[core]/es_extended/esx-overextended.sql
 
   - action: download_github
     src: https://github.com/esx-overextended/esx_identity

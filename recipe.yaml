@@ -250,8 +250,6 @@ tasks:
     src: https://github.com/esx-framework/esx_vehicleshop
     ref: main
     dest: ./resources/[addons]/esx_vehicleshop
-  - action: query_database
-    file: ./resources/[addons]/esx_vehicleshop/esx_vehicleshop.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_garage

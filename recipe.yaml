@@ -236,13 +236,6 @@ tasks:
   - action: query_database
     file: ./resources/[addons]/esx_optionalneeds/esx_optionalneeds.sql
 
-  - action: download_file
-    path: ./tmp/esx_hud.zip
-    url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
-  - action: unzip
-    src: ./tmp/esx_hud.zip
-    dest: ./resources/[addons]
-
   - action: waste_time # Prevent GitHub Throttling
     seconds: 5
 
@@ -330,25 +323,39 @@ tasks:
     file: ./resources/[addons]/esx_mechanicjob/esx_mechanicjob.sql
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_sit
+    src: https://github.com/acscripts/ac_radio
     ref: main
-    dest: ./resources/[addons]/esx_sit
+    dest: ./resources/[standalone]/ac_radio
 
   - action: download_github
-    src: https://github.com/Benzo00/esx-radio
+    src: https://github.com/Concept-Collective/cc-chat
     ref: main
-    dest: ./resources/[addons]/esx-radio
+    dest: ./resources/[standalone]/cc-chat
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_rpchat
+    src: https://github.com/Concept-Collective/cc-rpchat
     ref: main
-    dest: ./resources/[addons]/esx_rpchat
+    dest: ./resources/[standalone]/cc-rpchat
 
-  ## Patching configs: esx-radio
-  - action: replace_string
-    file: ./resources/[addons]/esx-radio/config.lua
-    search: 'Key = "UP"'
-    replace: "Key = nil"
+  - action: download_github
+    src: https://github.com/XProject/x-config
+    ref: master
+    dest: ./resources/[project-x]/x-config
+
+  - action: download_github
+    src: https://github.com/XProject/x-weathertime
+    ref: main
+    dest: ./resources/[project-x]/x-weathertime
+
+  - action: download_github
+    src: https://github.com/XProject/x-radiolist
+    ref: master
+    dest: ./resources/[project-x]/x-radiolist
+
+  - action: download_github
+    src: https://github.com/XProject/x-visual
+    ref: master
+    dest: ./resources/[project-x]/x-visual
 
   ## Cleanup
   - action: remove_path

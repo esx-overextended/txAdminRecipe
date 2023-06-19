@@ -45,8 +45,6 @@ tasks:
     dest: ./logo.png
 
   - action: connect_database
-  # - action: query_database
-  #   file: ./tmp/txAdminRecipe/esx-overextended.sql
 
   # Download default CFX resources
   - action: download_github
@@ -73,7 +71,7 @@ tasks:
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
-    dest: ./resources/[voice]/pma-voice
+    dest: ./resources/[standalone]/pma-voice
 
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl

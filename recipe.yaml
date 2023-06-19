@@ -45,8 +45,8 @@ tasks:
     dest: ./logo.png
 
   - action: connect_database
-  - action: query_database
-    file: ./tmp/txAdminRecipe/esx-overextended.sql
+  # - action: query_database
+  #   file: ./tmp/txAdminRecipe/esx-overextended.sql
 
   # Download default CFX resources
   - action: download_github
@@ -85,6 +85,8 @@ tasks:
     src: https://github.com/esx-overextended/es_extended
     ref: main
     dest: ./resources/[core]/es_extended
+  - action: query_database
+    file: ./resources/[core]/es_extended/es_extended.sql
 
   - action: download_github
     src: https://github.com/esx-overextended/esx_identity
@@ -95,6 +97,8 @@ tasks:
     src: https://github.com/esx-overextended/esx_multicharacter
     ref: main
     dest: ./resources/[core]/esx_multicharacter
+  - action: query_database
+    file: ./resources/[core]/esx_multicharacter/esx_multicharacter.sql
 
   - action: download_github
     src: https://github.com/esx-overextended/esx_menu_list
@@ -112,6 +116,10 @@ tasks:
     append: true
     data: |
       provides { "esx_skin", "skinchanger" }
+  - action: query_database
+    file: ./resources/[core]/illenium-appearance/sql/player_outfits.sql
+  - action: query_database
+    file: ./resources/[core]/illenium-appearance/sql/player_outfit_codes.sql
 
   - action: download_github
     src: https://github.com/esx-overextended/esx_loadingscreen

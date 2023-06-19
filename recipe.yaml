@@ -80,6 +80,11 @@ tasks:
 
   # Download core resources and ESX dependencies
   - action: download_github
+    src: https://github.com/esx-overextended/cron # Must remove this in-favor of ox_lib's cron & adjust dependant resources...
+    ref: main
+    dest: ./resources/[core]/cron
+
+  - action: download_github
     src: https://github.com/esx-overextended/es_extended
     ref: main
     dest: ./resources/[core]/es_extended
@@ -90,6 +95,8 @@ tasks:
     src: https://github.com/esx-overextended/esx_identity
     ref: main
     dest: ./resources/[core]/esx_identity
+  - action: query_database
+    file: ./resources/[core]/esx_identity/esx_identity.sql
 
   - action: download_github
     src: https://github.com/esx-overextended/esx_multicharacter
@@ -156,36 +163,78 @@ tasks:
     src: https://github.com/esx-framework/esx_addonaccount
     ref: main
     dest: ./resources/[addons]/esx_addonaccount
+  - action: query_database
+    file: ./resources/[core]/esx_addonaccount/esx_addonaccount.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_addoninventory
     ref: main
     dest: ./resources/[addons]/esx_addoninventory
+  - action: query_database
+    file: ./resources/[core]/esx_addoninventory/esx_addoninventory.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_datastore
     ref: main
     dest: ./resources/[addons]/esx_datastore
+  - action: query_database
+    file: ./resources/[core]/esx_datastore/esx_datastore.sql
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_policejob
+    src: https://github.com/esx-framework/esx_license
     ref: main
-    dest: ./resources/[addons]/esx_policejob
+    dest: ./resources/[addons]/esx_license
+  - action: query_database
+    file: ./resources/[core]/esx_license/esx_license.sql
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_service
+    src: https://github.com/esx-framework/esx_billing
     ref: main
-    dest: ./resources/[addons]/esx_service
+    dest: ./resources/[addons]/esx_billing
+  - action: query_database
+    file: ./resources/[core]/esx_billing/esx_billing.sql
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_rpchat
+    src: https://github.com/esx-framework/esx_society
     ref: main
-    dest: ./resources/[addons]/esx_rpchat
+    dest: ./resources/[addons]/esx_society
+  - action: query_database
+    file: ./resources/[core]/esx_society/esx_society.sql
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_jobs
+    ref: main
+    dest: ./resources/[addons]/esx_jobs
+  - action: query_database
+    file: ./resources/[core]/esx_jobs/esx_jobs.sql
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_joblisting
+    ref: main
+    dest: ./resources/[addons]/esx_joblisting
+  - action: query_database
+    file: ./resources/[core]/esx_joblisting/esx_joblisting.sql
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_status
+    ref: main
+    dest: ./resources/[addons]/esx_status
+  - action: query_database
+    file: ./resources/[core]/esx_status/esx_status.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_basicneeds
     ref: main
     dest: ./resources/[addons]/esx_basicneeds
+  - action: query_database
+    file: ./resources/[core]/esx_basicneeds/esx_basicneeds.sql
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_optionalneeds
+    ref: main
+    dest: ./resources/[addons]/esx_optionalneeds
+  - action: query_database
+    file: ./resources/[core]/esx_optionalneeds/esx_optionalneeds.sql
 
   - action: download_file
     path: ./tmp/esx_hud.zip
@@ -194,13 +243,29 @@ tasks:
     src: ./tmp/esx_hud.zip
     dest: ./resources/[addons]
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_optionalneeds
-    ref: main
-    dest: ./resources/[addons]/esx_optionalneeds
-
   - action: waste_time # Prevent GitHub Throttling
     seconds: 5
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_vehicleshop
+    ref: main
+    dest: ./resources/[addons]/esx_vehicleshop
+  - action: query_database
+    file: ./resources/[core]/esx_vehicleshop/esx_vehicleshop.sql
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_garage
+    ref: main
+    dest: ./resources/[addons]/esx_garage
+  - action: query_database
+    file: ./resources/[core]/esx_garage/esx_garage.sql
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_boat
+    ref: main
+    dest: ./resources/[addons]/esx_boat
+  - action: query_database
+    file: ./resources/[core]/esx_boat/esx_boat.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_property
@@ -211,89 +276,58 @@ tasks:
     src: https://github.com/esx-framework/esx_dmvschool
     ref: main
     dest: ./resources/[addons]/esx_dmvschool
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_taxijob
-    ref: main
-    dest: ./resources/[addons]/esx_taxijob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_billing
-    ref: main
-    dest: ./resources/[addons]/esx_billing
+  - action: query_database
+    file: ./resources/[core]/esx_dmvschool/esx_dmvschool.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_drugs
     ref: main
     dest: ./resources/[addons]/esx_drugs
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_garage
-    ref: main
-    dest: ./resources/[addons]/esx_garage
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_vehicleshop
-    ref: main
-    dest: ./resources/[addons]/esx_vehicleshop
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_joblisting
-    ref: main
-    dest: ./resources/[addons]/esx_joblisting
+  - action: query_database
+    file: ./resources/[core]/esx_drugs/esx_drugs.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_banking
     ref: main
     dest: ./resources/[addons]/esx_banking
+  - action: query_database
+    file: ./resources/[core]/esx_banking/banking.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_lscustom
     ref: main
     dest: ./resources/[addons]/esx_lscustom
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_society
-    ref: main
-    dest: ./resources/[addons]/esx_society
-
   - action: waste_time # Prevent GitHub Throttling
     seconds: 5
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_license
+    src: https://github.com/esx-framework/esx_policejob
     ref: main
-    dest: ./resources/[addons]/esx_license
+    dest: ./resources/[addons]/esx_policejob
+  - action: query_database
+    file: ./resources/[core]/esx_policejob/esx_policejob.sql
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_accessories
+    src: https://github.com/esx-framework/esx_taxijob
     ref: main
-    dest: ./resources/[addons]/esx_accessories
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_jobs
-    ref: main
-    dest: ./resources/[addons]/esx_jobs
+    dest: ./resources/[addons]/esx_taxijob
+  - action: query_database
+    file: ./resources/[core]/esx_taxijob/esx_taxijob.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_ambulancejob
     ref: main
     dest: ./resources/[addons]/esx_ambulancejob
+  - action: query_database
+    file: ./resources/[core]/esx_ambulancejob/esx_ambulancejob.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_mechanicjob
     ref: main
     dest: ./resources/[addons]/esx_mechanicjob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_boat
-    ref: main
-    dest: ./resources/[addons]/esx_boat
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_status
-    ref: main
-    dest: ./resources/[addons]/esx_status
+  - action: query_database
+    file: ./resources/[core]/esx_mechanicjob/esx_mechanicjob.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_sit
@@ -304,6 +338,11 @@ tasks:
     src: https://github.com/Benzo00/esx-radio
     ref: main
     dest: ./resources/[addons]/esx-radio
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_rpchat
+    ref: main
+    dest: ./resources/[addons]/esx_rpchat
 
   ## Patching configs: esx-radio
   - action: replace_string

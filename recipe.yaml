@@ -151,6 +151,7 @@ tasks:
   - action: move_path
     src: ./tmp/txAdminRecipe/ox_target_esx.lua
     dest: ./resources/[ox]/ox_target/client/framework/esx.lua
+    overwrite: true
 
   - action: download_file
     path: ./tmp/ox_doorlock.zip

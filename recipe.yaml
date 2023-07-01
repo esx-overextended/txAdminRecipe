@@ -148,6 +148,10 @@ tasks:
     ref: main
     dest: ./resources/[ox]/ox_target
 
+  - action: move_path
+    src: ./tmp/txAdminRecipe/ox_target_esx.lua
+    dest: ./resources/[ox]/ox_target/client/framework/esx.lua
+
   - action: download_file
     path: ./tmp/ox_doorlock.zip
     url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip

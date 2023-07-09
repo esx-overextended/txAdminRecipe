@@ -255,8 +255,6 @@ tasks:
     src: https://github.com/esx-overextended/esx_garage
     ref: main
     dest: ./resources/[addons]/esx_garage
-  - action: query_database
-    file: ./resources/[addons]/esx_garage/esx_garage.sql
 
   - action: download_github
     src: https://github.com/esx-framework/esx_boat

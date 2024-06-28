@@ -380,7 +380,7 @@ tasks:
   - action: download_github
     src: https://github.com/esx-overextended/patoche_pdm_cardealer
     ref: main
-    dest: ./resources/[maps]/patoche_pdm_cardealer
+    dest: ./resources/[map]/patoche_pdm_cardealer
 
   ## Cleanup
   - action: remove_path

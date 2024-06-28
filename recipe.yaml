@@ -246,7 +246,8 @@ tasks:
   - action: query_database
     file: ./resources/[addons]/esx_optionalneeds/esx_optionalneeds.sql
 
-  - action: waste_time # Prevent GitHub Throttling
+  # Prevent GitHub Throttling
+  - action: waste_time
     seconds: 5
 
   - action: download_github
@@ -299,7 +300,8 @@ tasks:
     ref: main
     dest: ./resources/[addons]/esx_lscustom
 
-  - action: waste_time # Prevent GitHub Throttling
+  # Prevent GitHub Throttling
+  - action: waste_time
     seconds: 5
 
   - action: download_github
@@ -364,6 +366,16 @@ tasks:
     src: https://github.com/XProject/x-visual
     ref: master
     dest: ./resources/[project-x]/x-visual
+
+  # Prevent GitHub Throttling
+  - action: waste_time
+    seconds: 5
+
+  # Maps
+  - action: download_github
+    src: https://github.com/esx-overextended/patoche_pdm_cardealer
+    ref: main
+    dest: ./resources/[maps]/patoche_pdm_cardealer
 
   ## Cleanup
   - action: remove_path

@@ -148,6 +148,11 @@ tasks:
     ref: main
     dest: ./resources/[ox]/ox_fuel
 
+  - action: replace_string
+    file: ./resources/[ox]/ox_fuel/config.lua
+    search: 'ox_target = false'
+    replace: 'ox_target = true'
+
   - action: download_github
     src: https://github.com/overextended/ox_target
     ref: main

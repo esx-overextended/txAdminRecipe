@@ -78,6 +78,11 @@ tasks:
     ref: master
     dest: ./resources/[standalone]/bob74_ipl
 
+  - action: download_github
+    src: https://github.com/citizenfx/screenshot-basic
+    ref: master
+    dest: ./resources/[standalone]/screenshot-basic
+
   # Download core resources and ESX dependencies
   - action: download_github
     src: https://github.com/esx-overextended/cron # Must remove this in-favor of ox_lib's cron & adjust dependant resources...

@@ -268,13 +268,6 @@ tasks:
     dest: ./resources/[addons]/esx_garage
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_boat
-    ref: main
-    dest: ./resources/[addons]/esx_boat
-  - action: query_database
-    file: ./resources/[addons]/esx_boat/esx_boat.sql
-
-  - action: download_github
     src: https://github.com/esx-framework/esx_property
     ref: main
     dest: ./resources/[addons]/esx_property

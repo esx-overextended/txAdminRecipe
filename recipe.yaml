@@ -365,6 +365,11 @@ tasks:
     ref: master
     dest: ./resources/[project-x]/x-visual
 
+  - action: download_github
+    src: https://github.com/XProject/x-hud
+    ref: dev
+    dest: ./resources/[project-x]/x-hud
+
   # Prevent GitHub Throttling
   - action: waste_time
     seconds: 5

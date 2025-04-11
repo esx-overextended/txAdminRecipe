@@ -83,6 +83,15 @@ tasks:
     ref: master
     dest: ./resources/[standalone]/screenshot-basic
 
+  - action: download_github
+    src: https://github.com/qbcore-framework/interact-sound
+    ref: master
+    dest: ./resources/[standalone]/interact-sound
+  - action: replace_string
+    file: ./resources/[standalone]/interact-sound/client/main.lua
+    search: "local hasPlayerLoaded = false"
+    replace: "local hasPlayerLoaded = true"
+
   # Download core resources and ESX dependencies
   - action: download_github
     src: https://github.com/esx-overextended/cron # Must remove this in-favor of ox_lib's cron & adjust dependant resources...

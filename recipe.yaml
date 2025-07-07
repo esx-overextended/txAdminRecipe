@@ -184,79 +184,84 @@ tasks:
     seconds: 5
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_addonaccount
+    src: https://github.com/esx-framework/ESX-Legacy-Addons
     ref: main
+    dest: ./tmp/ESX_Legacy_Addons
+
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_addonaccount
     dest: ./resources/[addons]/esx_addonaccount
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_addonaccount/esx_addonaccount.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_addoninventory
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_addoninventory
     dest: ./resources/[addons]/esx_addoninventory
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_addoninventory/esx_addoninventory.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_datastore
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_datastore
     dest: ./resources/[addons]/esx_datastore
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_datastore/esx_datastore.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_license
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_license
     dest: ./resources/[addons]/esx_license
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_license/esx_license.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_billing
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_billing
     dest: ./resources/[addons]/esx_billing
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_billing/esx_billing.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_society
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_society
     dest: ./resources/[addons]/esx_society
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_society/esx_society.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_jobs
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_jobs
     dest: ./resources/[addons]/esx_jobs
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_jobs/esx_jobs.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_joblisting
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_joblisting
     dest: ./resources/[addons]/esx_joblisting
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_joblisting/esx_joblisting.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_status
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_status
     dest: ./resources/[addons]/esx_status
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_status/esx_status.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_basicneeds
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_basicneeds
     dest: ./resources/[addons]/esx_basicneeds
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_basicneeds/esx_basicneeds.sql
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_optionalneeds
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_optionalneeds
     dest: ./resources/[addons]/esx_optionalneeds
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_optionalneeds/esx_optionalneeds.sql
 
@@ -276,66 +281,62 @@ tasks:
     ref: main
     dest: ./resources/[addons]/esx_garage
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_property
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_property
     dest: ./resources/[addons]/esx_property
+    overwrite: true
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_dmvschool
-    ref: main
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_dmvschool
     dest: ./resources/[addons]/esx_dmvschool
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_dmvschool/esx_dmvschool.sql
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_drugs
-    ref: main
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_drugs
     dest: ./resources/[addons]/esx_drugs
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_drugs/esx_drugs.sql
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_banking
-    ref: main
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_banking
     dest: ./resources/[addons]/esx_banking
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_banking/banking.sql
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_lscustom
-    ref: main
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_lscustom
     dest: ./resources/[addons]/esx_lscustom
-
-  # Prevent GitHub Throttling
-  - action: waste_time
-    seconds: 5
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_policejob
-    ref: main
+    overwrite: true
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_policejob
     dest: ./resources/[addons]/esx_policejob
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_policejob/esx_policejob.sql
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_taxijob
-    ref: main
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_taxijob
     dest: ./resources/[addons]/esx_taxijob
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_taxijob/esx_taxijob.sql
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_ambulancejob
-    ref: main
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_ambulancejob
     dest: ./resources/[addons]/esx_ambulancejob
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_ambulancejob/esx_ambulancejob.sql
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_mechanicjob
-    ref: main
+    
+  - action: move_path
+    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_mechanicjob
     dest: ./resources/[addons]/esx_mechanicjob
+    overwrite: true
   - action: query_database
     file: ./resources/[addons]/esx_mechanicjob/esx_mechanicjob.sql
 

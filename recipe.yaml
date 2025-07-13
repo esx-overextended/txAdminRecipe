@@ -41,6 +41,10 @@ tasks:
     dest: ./pma_voice.cfg
 
   - action: move_path
+    src: ./tmp/txAdminRecipe/miscellaneous.cfg
+    dest: ./miscellaneous.cfg
+
+  - action: move_path
     src: ./tmp/txAdminRecipe/logo.png
     dest: ./logo.png
 

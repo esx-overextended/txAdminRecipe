@@ -245,11 +245,10 @@ tasks:
   - action: query_database
     file: ./resources/[addons]/esx_joblisting/esx_joblisting.sql
 
-  - action: move_path
-    src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_status
+  - action: download_github
+    src: https://github.com/esx-overextended/esx_status
+    ref: main
     dest: ./resources/[addons]/esx_status
-  - action: query_database
-    file: ./resources/[addons]/esx_status/esx_status.sql
 
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_basicneeds

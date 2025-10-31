@@ -156,6 +156,11 @@ tasks:
     src: ./tmp/ox_inventory.zip
     dest: ./resources/[ox]
 
+  - action: move_path
+    src: ./tmp/txAdminRecipe/ox_inventory/modules/bridge/esx-ox
+    dest: ./resources/[ox]/ox_inventory/modules/bridge/esx-ox
+    overwrite: true
+
   - action: download_github
     src: https://github.com/overextended/ox_fuel
     ref: main
@@ -163,8 +168,8 @@ tasks:
 
   - action: replace_string
     file: ./resources/[ox]/ox_fuel/config.lua
-    search: 'ox_target = false'
-    replace: 'ox_target = true'
+    search: "ox_target = false"
+    replace: "ox_target = true"
 
   - action: download_github
     src: https://github.com/overextended/ox_target
@@ -283,41 +288,41 @@ tasks:
     dest: ./resources/[addons]/esx_dmvschool
   - action: query_database
     file: ./resources/[addons]/esx_dmvschool/esx_dmvschool.sql
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_drugs
     dest: ./resources/[addons]/esx_drugs
   - action: query_database
     file: ./resources/[addons]/esx_drugs/esx_drugs.sql
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_banking
     dest: ./resources/[addons]/esx_banking
   - action: query_database
     file: ./resources/[addons]/esx_banking/banking.sql
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_lscustom
     dest: ./resources/[addons]/esx_lscustom
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_policejob
     dest: ./resources/[addons]/esx_policejob
   - action: query_database
     file: ./resources/[addons]/esx_policejob/esx_policejob.sql
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_taxijob
     dest: ./resources/[addons]/esx_taxijob
   - action: query_database
     file: ./resources/[addons]/esx_taxijob/esx_taxijob.sql
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_ambulancejob
     dest: ./resources/[addons]/esx_ambulancejob
   - action: query_database
     file: ./resources/[addons]/esx_ambulancejob/esx_ambulancejob.sql
-    
+
   - action: move_path
     src: ./tmp/ESX_Legacy_Addons/[esx_addons]/esx_mechanicjob
     dest: ./resources/[addons]/esx_mechanicjob
@@ -365,8 +370,8 @@ tasks:
     dest: ./resources/[project-x]/x-hud
   - action: replace_string
     file: ./resources/[project-x]/x-hud/shared/config.lua
-    search: "Config.Framework = \"esx-ox\""
-    replace: "Config.Framework = \"esx\""
+    search: 'Config.Framework = "esx-ox"'
+    replace: 'Config.Framework = "esx"'
 
   # Prevent GitHub Throttling
   - action: waste_time

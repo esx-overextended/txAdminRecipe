@@ -151,7 +151,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/ox_inventory.zip
-    url: https://github.com/overextended/CommunityOx/releases/latest/download/ox_inventory.zip
+    url: https://github.com/CommunityOx/ox_inventory/releases/latest/download/ox_inventory.zip
   - action: unzip
     src: ./tmp/ox_inventory.zip
     dest: ./resources/[ox]

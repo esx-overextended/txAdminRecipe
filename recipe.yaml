@@ -60,14 +60,14 @@ tasks:
   # Download standalone resources
   - action: download_file
     path: ./tmp/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+    url: https://github.com/CommunityOx/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
     src: ./tmp/oxmysql.zip
     dest: ./resources/[standalone]
 
   - action: download_file
     path: ./tmp/ox_lib.zip
-    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+    url: https://github.com/CommunityOx/ox_lib/releases/latest/download/ox_lib.zip
   - action: unzip
     src: ./tmp/ox_lib.zip
     dest: ./resources/[ox]
@@ -151,7 +151,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/ox_inventory.zip
-    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+    url: https://github.com/overextended/CommunityOx/releases/latest/download/ox_inventory.zip
   - action: unzip
     src: ./tmp/ox_inventory.zip
     dest: ./resources/[ox]
@@ -162,7 +162,7 @@ tasks:
     overwrite: true
 
   - action: download_github
-    src: https://github.com/overextended/ox_fuel
+    src: https://github.com/CommunityOx/ox_fuel
     ref: main
     dest: ./resources/[ox]/ox_fuel
 
@@ -172,7 +172,7 @@ tasks:
     replace: "ox_target = true"
 
   - action: download_github
-    src: https://github.com/overextended/ox_target
+    src: https://github.com/CommunityOx/ox_target
     ref: main
     dest: ./resources/[ox]/ox_target
 
@@ -183,7 +183,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/ox_doorlock.zip
-    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
+    url: https://github.com/CommunityOx/ox_doorlock/releases/latest/download/ox_doorlock.zip
   - action: unzip
     src: ./tmp/ox_doorlock.zip
     dest: ./resources/[ox]
